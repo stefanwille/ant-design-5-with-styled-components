@@ -11,7 +11,7 @@ const items: TabsProps["items"] = [
   {
     key: "1",
     label: `Tab 1`,
-    children: `Content of Tab Pane 1`,
+    children: `Tabs styled with styled-components`,
   },
   {
     key: "2",

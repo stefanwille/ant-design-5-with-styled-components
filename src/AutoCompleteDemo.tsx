@@ -8,9 +8,7 @@ const mockVal = (str: string, repeat = 1) => ({
 });
 
 export const AutoCompleteDemo: React.FC = () => {
-  const [value, setValue] = useState("");
   const [options, setOptions] = useState<{ value: string }[]>([]);
-  const [anotherOptions, setAnotherOptions] = useState<{ value: string }[]>([]);
 
   const getPanelValue = (searchText: string) =>
     !searchText
@@ -21,13 +19,10 @@ export const AutoCompleteDemo: React.FC = () => {
     console.log("onSelect", data);
   };
 
-  const onChange = (data: string) => {
-    setValue(data);
-  };
-
   return (
     <>
       <GlobalStyle />
+      Autocomplete styled with styled-components: &nbsp;
       <StyledAutocomplete
         options={options}
         style={{ width: 200 }}
@@ -36,22 +31,12 @@ export const AutoCompleteDemo: React.FC = () => {
         placeholder="input here"
         popupClassName="my-autocomplete-popup"
       />
-      <br />
-      <br />
-      <StyledAutocomplete
-        value={value}
-        options={anotherOptions}
-        style={{ width: 200 }}
-        onSelect={onSelect}
-        onSearch={(text) => setAnotherOptions(getPanelValue(text))}
-        onChange={onChange}
-        placeholder="control mode"
-      />
     </>
   );
 };
 
 const StyledAutocomplete = styled(AutoComplete)`
+
   .ant-select-selection-search-input.ant-select-selection-search-input.ant-select-selection-search-input.ant-select-selection-search-input {
     color: #b01580;
     background-color: #d7d2ad;
@@ -60,6 +45,6 @@ const StyledAutocomplete = styled(AutoComplete)`
 const GlobalStyle = createGlobalStyle`
   .my-autocomplete-popup .ant-select-item.ant-select-item-option  .ant-select-item-option-content {
     color: #003cff;
-    font-family: Serif;
+    font-family: Georgia;
   }
 `;
