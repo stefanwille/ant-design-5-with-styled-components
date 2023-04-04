@@ -15,6 +15,10 @@ import { AutoCompleteDemo } from "./AutoCompleteDemo";
 function App() {
   return (
     <AntApp>
+      {/*
+        Fix from "What is this css-dev-only class?"
+         at https://github.com/ant-design/ant-design/discussions/38753
+        */}
       <ConfigProvider theme={{ hashed: false }}>
         <div className="App" style={{ margin: 24 }}>
           <h1>antd version: {version}</h1>
