@@ -8,6 +8,9 @@ import {
   version,
 } from "antd";
 import styled from "styled-components";
+import { TabsDemo } from "./TabsDemo";
+import React from "react";
+import { AutoCompleteDemo } from "./AutoCompleteDemo";
 
 function App() {
   return (
@@ -20,6 +23,8 @@ function App() {
             <Button type="primary">Primary Button</Button>
             <Box>Eine Box</Box>
             <GreenButton>Green Button</GreenButton>
+            <TabsDemo />
+            <AutoCompleteDemo />
           </Space>
         </div>
       </ConfigProvider>
@@ -34,10 +39,19 @@ const Box = styled.div`
   padding: 8px;
 `;
 
+// const GreenButton = Button;
+//
+//   background-color: greenyellow;
+//   font-size: 30px;
+//   height: 60px;
+//   text-align: right;
+//   width: 200px;
+// `;
 const GreenButton = styled(Button)`
   background-color: greenyellow;
   font-size: 30px;
   height: 60px;
   text-align: right;
-  width: 200px;
+  width: 300px;
+  display: block;
 `;
